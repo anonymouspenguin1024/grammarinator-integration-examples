@@ -1,0 +1,6 @@
+.venv
+resources/grammars-v4
+resources/jerryscript
+resources/population
+resources/ECMAScriptGenerator.py
+__pycache__
