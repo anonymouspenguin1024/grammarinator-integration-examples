@@ -4,10 +4,10 @@ set -e
 ROOT_DIR="$(dirname "$(realpath "$0")")"
 
 cd $ROOT_DIR
-echo "Create Python virtual environment"
-mkdir -p .venv
-virtualenv -p python3 .venv
-source .venv/bin/activate
+# echo "Create Python virtual environment"
+# mkdir -p .venv
+# virtualenv -p python3 .venv
+# source .venv/bin/activate
 
 echo "Get requirements"
 echo "================"
@@ -16,14 +16,12 @@ cd $ROOT_DIR/resources
 
 echo "Install Python requirements"
 pip3 install git+https://github.com/renatahodovan/fuzzinator.git@master
+pip3 install git+https://github.com/renatahodovan/grammarinator.git@master
 
-# Disabled because grammarinator/targetfuzz is (assumed to be) installed in the environment
-# pip3 install git+https://github.com/renatahodovan/grammarinator.git@master
-
-echo "Clone grammars-v4"
+# echo "Clone grammars-v4"
 git clone --depth=1 https://github.com/antlr/grammars-v4.git
 
-echo "Clone JerryScript"
+# echo "Clone JerryScript"
 git clone --depth=1 https://github.com/jerryscript-project/jerryscript.git
 
 echo "Create fuzzer from ECMAScript grammar"

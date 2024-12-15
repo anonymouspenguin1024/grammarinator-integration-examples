@@ -1,0 +1,80 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run fuzzinator (jerryscript-api)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "/scratch/eric/anaconda3/envs/gm/bin/fuzzinator",
+        "cwd": "/scratch/eric/grammarinator-integration-examples/fuzzinator/api",
+        "env": {
+          "PYTHONPATH": ".:../../resources/"
+        },
+        "args": [
+          "../jerryscript.ini",
+          "api.ini",
+          "-Dfuzzinator:config_root=/scratch/eric/grammarinator-integration-examples/",
+          "-Djerry:build_type=build_default",
+          "-Dfuzzinator:cost_budget=1"
+        ],
+        "justMyCode": false,
+      },
+      {
+        "name": "Run fuzzinator (jerryscript-test-api)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "/scratch/eric/anaconda3/envs/gm/bin/fuzzinator",
+        "cwd": "/scratch/eric/grammarinator-integration-examples/fuzzinator/api",
+        "env": {
+          "PYTHONPATH": ".:../../resources/"
+        },
+        "args": [
+          "../jerryscript-test.ini",
+          "api.ini",
+          "-Dfuzzinator:config_root=/scratch/eric/grammarinator-integration-examples/",
+          "-Djerry:build_type=build_default",
+          "-Dfuzzinator:cost_budget=1"
+        ],
+        "justMyCode": false,
+      },
+      {
+        "name": "Run fuzzinator (clang-api)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "/scratch/eric/anaconda3/envs/gm/bin/fuzzinator",
+        "cwd": "/scratch/eric/grammarinator-integration-examples/fuzzinator/clang-api",
+        "env": {
+          "PYTHONPATH": ".:../../resources/"
+        },
+        "args": [
+          "../clang.ini",
+          "api.ini",
+          "-Dfuzzinator:config_root=/scratch/eric/grammarinator-integration-examples/",
+        //   "-Djerry:build_type=build_default",
+          "-Dfuzzinator:cost_budget=1"
+        ],
+        "justMyCode": false,
+      },
+      {
+        "name": "Run fuzzinator (tf-clang-api)",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "/scratch/eric/anaconda3/envs/gm/bin/fuzzinator",
+        "cwd": "/scratch/eric/grammarinator-integration-examples/fuzzinator/tf-clang-api",
+        "env": {
+          "PYTHONPATH": ".:../../resources/"
+        },
+        "args": [
+          "--wui",
+          "--bind-ip-all",
+          "../clang-2.ini",
+          "api.ini",
+          "-Dfuzzinator:config_root=/scratch/eric/grammarinator-integration-examples/",
+        //   "-Djerry:build_type=build_default",
+          "-Dfuzzinator:cost_budget=1"
+        ],
+        "justMyCode": false,
+      }
+    ]
+  }
+  
